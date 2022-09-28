@@ -36,5 +36,26 @@ namespace MoodAnalyzerTest
             //Assert
             Assert.AreEqual(expectedValue, result);
         }
+        //Refactor code
+        // Refactor TC 1.1 Given “I am in Sad Mood” message Should Return SAD.
+        [TestMethod]
+        public void GivenSadMood_WhenAnalyse_ShouldReturnSAD()
+        {
+            string expectedValue = "SAD";
+            string message = "I am in Sad Mood";
+            MoodAnalyzer moodAnalyzer = new MoodAnalyzer();
+            string result = moodAnalyzer.AnalyseMood(message);
+            Assert.AreEqual(expectedValue, result);
+        }
+        // Refactor TC 1.2 Given “I am in Happy Mood” message Should Return SAD.
+        [TestMethod]
+        public void GivenAnyMood_ShouldReturnHAPPY()
+        {
+            string expectedValue = "HAPPY";
+            string message = "I am in Any Mood";
+            MoodAnalyzer moodAnalyzer = new MoodAnalyzer();
+            string mood = moodAnalyzer.AnalyseMood(message);
+            Assert.AreEqual(expectedValue, mood);
+        }
     }
 }
